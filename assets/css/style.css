@@ -231,5 +231,6 @@ a:hover {
 }
 .time-sleep img {
     height: 350px;
+    border-radius: 12px;
     object-fit: cover;
 }
