@@ -1,32 +1,21 @@
-/* Custom Scrollbar  */
-/* Tùy chỉnh cho tất cả các thanh cuộn trong trang */
 ::-webkit-scrollbar {
-    width: 12px; /* Đặt chiều rộng của thanh cuộn */
+    width: 10px;
 }
-
-/* Tùy chỉnh đường dẫn của thanh cuộn (track) */
 ::-webkit-scrollbar-track {
-    /* Đặt màu nền cho track */
     box-shadow: inset 0 0 12px rgb(184, 184, 184);
     border-radius: 10px;
 }
 
-/* Tùy chỉnh tay cầm của thanh cuộn (thumb) */
 ::-webkit-scrollbar-thumb {
     background-image: linear-gradient(180deg, #d0368a 0%, #708ad4 99%);
-    border-radius: 10px; /* Đặt màu nền cho thumb */
+    border-radius: 10px;
 }
 
-/* End Scroll Bar */
-
-/* switch settings 👇 */
-
 .ui-switch {
-    /* switch */
+    margin: 0 20px;
     --switch-bg: rgb(135, 150, 165);
     --switch-width: 48px;
     --switch-height: 20px;
-    /* circle */
     --circle-diameter: 32px;
     --circle-bg: rgb(0, 56, 146);
     --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
@@ -92,8 +81,6 @@
     transition: all 500ms;
     opacity: 0;
 }
-
-/* actions */
 
 .ui-switch input:checked + .slider .circle {
     left: calc(100% - var(--circle-diameter));

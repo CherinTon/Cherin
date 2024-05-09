@@ -94,7 +94,8 @@
         />
         <meta name="theme-color" content="#ffffff" />
     </head>
-    <body style="height: 6000px">
+    <body style="height: 6000px" id="content">
+        <!-- Header navbar-->
         <header class="header nav-fixed">
             <div class="container">
                 <section class="navbar">
@@ -104,6 +105,56 @@
                             <li class="navbar-item">
                                 <a href="#">Home</a>
                             </li>
+                            <li class="navbar-item">
+                                <a href="#music">Musics</a>
+                            </li>
+                            <li class="navbar-item">
+                                <a href="#!">Films</a>
+                            </li>
+                            <li class="navbar-item">
+                                <a href="#!">Comics</a>
+                            </li>
+                            <li class="navbar-item">
+                                <a href="#!">Games</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- switch -->
+                    <label class="ui-switch">
+                        <input type="checkbox" />
+                        <div class="slider">
+                            <div class="circle"></div>
+                        </div>
+                    </label>
+
+                    <!-- <input
+                        type="button"
+                        id="btn1"
+                        value="red"
+                    />
+                    <input
+                        type="button"
+                        id="btn2"
+                        value="blue"
+                    />
+
+                    <script language="javascript">
+                        var button1 = document.getElementById("btn1");
+                        var button2 = document.getElementById("btn2");
+                        var body = document.getElementById("content");
+
+                        button1.onclick = function () {
+                            body.style.background = "red";
+                        };
+
+                        button2.onclick = function () {
+                            body.style.background = "blue";
+                        };
+                    </script> -->
+
+                    <!-- Right Navbar -->
+                    <div class="right-navbar">
+                        <ul class="navbar-list">
                             <li class="navbar-item">
                                 <a href="#about">About</a>
                             </li>
@@ -118,63 +169,35 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- Logo -->
-                    <div class="logo">
-                        <a href="#"
-                            ><img
-                                src="./assets/images/logo/logo.png"
-                                alt="Cherin"
-                        /></a>
-                    </div>
-                    <!-- Right Navbar -->
-                    <div class="left-navbar">
-                        <ul class="navbar-list">
-                            <li class="navbar-item">
-                                <a href="#!">Musics</a>
-                            </li>
-                            <li class="navbar-item">
-                                <a href="#!">Films</a>
-                            </li>
-                            <li class="navbar-item">
-                                <a href="#!">Comics</a>
-                            </li>
-                            <li class="navbar-item">
-                                <a href="#!">Games</a>
-                            </li>
-                            <li class="navbar-item">
-                                <label class="ui-switch">
-                                    <input type="checkbox" />
-                                    <div class="slider">
-                                        <div class="circle"></div>
-                                    </div>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
                 </section>
             </div>
         </header>
+
         <!-- About -->
         <section class="about" id="about">
             <div class="container">
                 <div class="about-main">
                     <div class="info">
                         <div class="info-wrap">
-                            <div class="name">
+                            <article class="name section-heading">
                                 <h1>Hello! I'm Cherin - FrontEnd Developer</h1>
-                            </div>
+                            </article>
                             <div class="status flex-line">
                                 <ion-icon
                                     name="star"
                                     class="status-icon star-icon"
                                 ></ion-icon>
-                                <span class="text-desc">Sleeping zzz... </span>
+                                <span class="heading-desc"
+                                    >Sleeping zzz...
+                                </span>
                                 <ion-icon
                                     name="location"
                                     class="location"
                                 ></ion-icon>
 
-                                <span class="text-desc">Ha Nam / Viet Nam</span>
+                                <span class="heading-desc"
+                                    >Ha Nam / Viet Nam</span
+                                >
                             </div>
 
                             <div class="info-line">
@@ -185,7 +208,7 @@
                                         class="line-icon"
                                     >
                                     </ion-icon>
-                                    <p class="text-desc">
+                                    <p class="heading-desc">
                                         Hi there, I'm Cherin- I'm over 24 years
                                         old.
                                     </p>
@@ -197,10 +220,8 @@
                                         class="line-icon"
                                     >
                                     </ion-icon>
-                                    <p class="text-desc">
-                                        I am very interested with IT Helpdesk. I
-                                        can build PC, install software, servers,
-                                        camera,...
+                                    <p class="heading-desc">
+                                        I am very interested with IT Helpdesk.
                                     </p>
                                 </div>
                                 <!-- Line 3 -->
@@ -210,9 +231,9 @@
                                         class="line-icon"
                                     >
                                     </ion-icon>
-                                    <p class="text-desc">
-                                        Experienced with HTML, CSS,
-                                        Javascript,...
+                                    <p class="heading-desc">
+                                        I can build PC, install software,
+                                        servers, camera,...
                                     </p>
                                 </div>
                                 <!-- Line 4 -->
@@ -222,7 +243,10 @@
                                         class="line-icon"
                                     >
                                     </ion-icon>
-                                    <p class="text-desc"></p>
+                                    <p class="heading-desc">
+                                        Experienced with HTML, CSS,
+                                        Javascript,...
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -247,6 +271,46 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="project" id="project">
+            <div class="container"></div>
+        </section>
+
+        <!-- music -->
+        <section class="music" id="music">
+            <figure class="music-img">
+                <img
+                    src="./assets/images/music-chill.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                />
+            </figure>
+            <div class="container">
+                <article class="section-heading">
+                    <span class="icon-heading"
+                        ><ion-icon name="git-commit"></ion-icon
+                    ></span>
+                    <h1>Music is life!!!</h1>
+                </article>
+                <div class="music-find">
+                    <div class="youtube-thumb" ></div>
+                    <!-- Search form -->
+                    <form action="" class="search-form">
+                        <input type="text" class="search-form__input" placeholder="Paste Youtube link here~!" type="url" value="">
+                        
+                        <!-- Submit button -->
+                        <button type="submit" class="search-form__btn">
+                            <ion-icon name="search" class="search-icon"></ion-icon>
+                        </button>
+                        <!-- Clear button -->
+                        <button type="reset" class="search-form__clear">
+                            <ion-icon name="close-circle-outline" class="del-icon"></ion-icon>
+                        </button>
+                    </form>
+                </div>
         </section>
     </body>
 
