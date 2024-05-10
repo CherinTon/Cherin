@@ -18,4 +18,50 @@ const display_clock = () => {
 
 display_clock();
 e9df40;
+/* Music */
 
+const playlist =$('.playlist')
+
+const app = {
+    currentIndex:0,
+    songs: [
+        {
+            name: 'Zing Mp3',
+            singer: 'Online Singer'
+        },
+    ]
+    render:function() {
+        const htmls = this.songs.map(song) => {
+            return `
+            <div class="song ${
+              index === this.currentIndex ? "active" : ""
+            }" data-index="${index}">
+                <div class="thumb"
+                    style="background-image: url('${song.image}')">
+                </div>
+                <div class="body">
+                    <h3 class="title">${song.name}</h3>
+                    <p class="author">${song.singer}</p>
+                </div>
+                <div class="option">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+        `;
+        });
+        $('.playlist').innerHTML =htmls.join("");
+    },
+    defineProperties: function() {
+        Object.defineProperty(this, 'currentSong',{
+          get: function(){
+            return this.songs[this.currentIndex]
+          }  
+        })
+    }
+        start: function() {
+            this.defineProperties()
+            this.render()
+        }
+}
+
+app.start()

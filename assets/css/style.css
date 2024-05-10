@@ -39,6 +39,7 @@ a:hover {
 }
 
 :root {
+    --primary-color: #ec1f55;
     --web-color: #6e6c6c;
     --height-navbar: 40px;
     --line-color: rgba(255, 255, 255, 0.75);
@@ -78,7 +79,7 @@ a:hover {
     left: 0;
     transform-origin: right;
     transform: scaleX(0);
-    transition: transform 0.3s ease;
+    transition: transform 1s ease-out;
 }
 
 .section-heading:hover::before {
@@ -256,9 +257,21 @@ a:hover {
     margin-top: 50px;
     position: relative;
 }
-.music .section-heading {
+.search-form,
+.search-form__clear,
+.music-title,
+.music-control,
+.tracklist {
     position: absolute;
-    top: 30px;
+}
+.music .music-title {
+    display: flex;
+    align-items: center;
+    top: 20px;
+}
+.music-desc {
+    font-size: 1.4rem;
+    margin-left: 16px;
 }
 .section-heading:hover .icon-heading {
     color: #fff;
@@ -269,27 +282,32 @@ a:hover {
 .music-img img {
     width: 100%;
     object-fit: cover;
-    opacity: 0.8;
+    filter: brightness(40%);
 }
-
+/* Music search */
 .search-form {
+    margin-top: 12px;
     width: 450px;
-
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: #fff;
     border-radius: 50px;
-    position: absolute;
-    top: 15%;
-    left: 50%;
+    top: 12%;
+    left: 45%;
     transform: translateX(-50%);
 }
 .search-form__input {
     width: 100%;
     padding: 12px;
-    margin-right: 30px;
+    margin: 2px 30px 0 4px;
+}
+.search-form__input::placeholder,
+input {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.6rem;
+    margin: 0;
 }
 .search-form__input,
 .search-form__btn,
@@ -319,10 +337,100 @@ a:hover {
     color: #000;
 }
 .search-form__clear {
-    position: absolute;
     right: 40px;
     top: 50%;
     transform: translateY(-50%);
     color: #f33;
     display: none;
+}
+
+.tracklist {
+    top: 0;
+    right: 0;
+}
+.list-music {
+    font-size: 2rem;
+}
+
+/* CONTROL */
+.music-control {
+    width: 400px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.music-btn {
+    width: 50%;
+    margin-top: 12px;
+    display: flex;
+    gap: 15px;
+    margin: 12px auto;
+    /* justify-content: space-around; */
+}
+.progress {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 6px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+.progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 6px;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+.control {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 18px 0 8px 0;
+}
+
+.control .btn {
+    color: #666;
+    padding: 18px;
+    font-size: 18px;
+}
+
+.control .btn.active {
+    color: var(--primary-color);
+}
+
+.control .btn-toggle-play {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+}
+
+.progress {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 6px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+.progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 6px;
+    background-color: var(--primary-color);
+    cursor: pointer;
 }

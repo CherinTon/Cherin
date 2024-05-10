@@ -289,28 +289,154 @@
                 />
             </figure>
             <div class="container">
-                <article class="section-heading">
-                    <span class="icon-heading"
-                        ><ion-icon name="git-commit"></ion-icon
-                    ></span>
-                    <h1>Music is life!!!</h1>
-                </article>
+                <div class="music-title">
+                    <article class="section-heading">
+                        <span class="icon-heading"
+                            ><ion-icon name="git-commit"></ion-icon
+                        ></span>
+                        <h1>Music is my life!!!</h1>
+                    </article>
+                    <span class="music-desc"
+                        >(Âm nhạc là ngôn ngữ không lời của tâm hồn)
+                    </span>
+                </div>
+                <!-- Search -->
                 <div class="music-find">
-                    <div class="youtube-thumb" ></div>
+                    <div class="youtube-thumb"></div>
                     <!-- Search form -->
                     <form action="" class="search-form">
-                        <input type="text" class="search-form__input" placeholder="Paste Youtube link here~!" type="url" value="">
-                        
+                        <input
+                            type="text"
+                            class="search-form__input"
+                            placeholder="Paste Youtube link here ..."
+                            type="url"
+                            value=""
+                            required
+                        />
+
                         <!-- Submit button -->
                         <button type="submit" class="search-form__btn">
-                            <ion-icon name="search" class="search-icon"></ion-icon>
+                            <ion-icon
+                                name="search"
+                                class="search-icon"
+                            ></ion-icon>
                         </button>
                         <!-- Clear button -->
                         <button type="reset" class="search-form__clear">
-                            <ion-icon name="close-circle-outline" class="del-icon"></ion-icon>
+                            <ion-icon
+                                name="close-circle-outline"
+                                class="del-icon"
+                            ></ion-icon>
                         </button>
                     </form>
                 </div>
+                <!--  control -->
+                <div class="music-control">
+                    <div class="music-btn">
+                        <div class="btn btn-repeat">
+                            <ion-icon name="reload"></ion-icon>
+                        </div>
+                        <div class="btn btn-prev">
+                            <ion-icon name="play-skip-back"></ion-icon>
+                        </div>
+                        <div class="btn btn-toggle-play">
+                            <ion-icon name="pause-circle"></ion-icon>
+                            <ion-icon name="play-circle"></ion-icon>
+                        </div>
+                        <div class="btn btn-next">
+                            <ion-icon name="play-skip-forward"></ion-icon>
+                        </div>
+                        <div class="btn btn-random">
+                            <ion-icon name="shuffle"></ion-icon>
+                        </div>
+                    </div>
+
+                    <input
+                        id="progress"
+                        class="progress"
+                        type="range"
+                        value="0"
+                        step="1"
+                        min="0"
+                        max="100"
+                    />
+                </div>
+
+                <audio id="audio" src=""></audio>
+            </div>
+
+            <!-- Tracklist -->
+            <div class="music-list" id="songList">
+                <ul class="tracklist">
+                    <li
+                        onclick="playSong('./assets/music/1.mp3')"
+                        class="list-music"
+                    >
+                        WindyHill
+                    </li>
+                    <li
+                        onclick="playSong('./assets/music/2.mp3')"
+                        class="list-music"
+                    >
+                        WindyHill
+                    </li>
+                    <li
+                        onclick="playSong('./assets/music/3.mp3')"
+                        class="list-music"
+                    >
+                        WindyHill
+                    </li>
+                    <li
+                        onclick="playSong('./assets/music/4.mp3')"
+                        class="list-music"
+                    >
+                        WindyHill
+                    </li>
+                    <li
+                        onclick="playSong('./assets/music/5.mp3')"
+                        class="list-music"
+                    >
+                        WindyHill
+                    </li>
+                    <li
+                        onclick="playSong('./assets/music/6.mp3')"
+                        class="list-music"
+                    >
+                        WindyHill
+                    </li>
+                    <li
+                        onclick="playSong('./assets/music/7.mp3')"
+                        class="list-music"
+                    >
+                        WindyHill
+                    </li>
+                    <li
+                        onclick="playSong('./assets/music/8.mp3')"
+                        class="list-music"
+                    >
+                        WindyHill
+                    </li>
+                    <li
+                        onclick="playSong('./assets/music/9.mp3')"
+                        class="list-music"
+                    >
+                        WindyHill
+                    </li>
+                    <li
+                        onclick="playSong('./assets/music/10.mp3')"
+                        class="list-music"
+                    >
+                        WindyHill
+                    </li>
+                </ul>
+            </div>
+            <script>
+                function playSong(songUrl) {
+                    var audioPlayer = document.getElementById("audioPlayer");
+                    audioPlayer.src = songUrl;
+                    audioPlayer.play();
+                }
+            </script>
         </section>
     </body>
 
