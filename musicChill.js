@@ -5,9 +5,11 @@ const prevBtn = document.querySelector(".play-back");
 const durationTime = document.querySelector(".duration");
 const remainingTime = document.querySelector(".remaining");
 const rangeBar = document.querySelector(".range");
+const sliderEl = document.querySelector("#rangeMusic");
 const musicName = document.querySelector(".music-name");
 const playRepeat = document.querySelector(".play-repeat");
 const randomBtn = document.querySelector(".play-random");
+const volumeControl = document.getElementById("volumeSlider");
 
 let isPlaying = true;
 let indexSong = 0;
@@ -17,13 +19,13 @@ let isRandom = false;
 const musics = [
     {
         id: 0,
-        title: "Windy Hill",
-        file: "/WindyHill.mp3",
+        title: "Là Kẻ Địch / 为敌",
+        file: "/LaKeDich.mp3",
     },
     {
         id: 1,
-        title: "Against the Odds",
-        file: "/Against.mp3",
+        title: "Windy Hill",
+        file: "/WindyHill.mp3",
     },
     {
         id: 2,
@@ -55,6 +57,16 @@ const musics = [
         id: 7,
         title: "Wolf's Song",
         file: "/Wolf'sSong.mp3",
+    },
+    {
+        id: 8,
+        title: "Vây giữ",
+        file: "/VayGiu.mp3",
+    },
+    {
+        id: 9,
+        title: "Against the Odds",
+        file: "/Against.mp3",
     },
 ];
 /**
@@ -103,13 +115,14 @@ function playRandomSong() {
     let randomIndex;
     do {
         randomIndex = Math.floor(Math.random() * musics.length);
-    } while (musics[randomIndex].id === musics[indexSong].id); // Đảm bảo bài hát ngẫu nhiên không trùng với bài hát hiện tại
+    } while (randomIndex === indexSong); // Đảm bảo bài hát ngẫu nhiên không trùng với bài hát hiện tại
 
     indexSong = randomIndex; // Cập nhật indexSong với chỉ số ngẫu nhiên
     init(indexSong); // Khởi tạo bài hát mới
     playPause(); // Phát bài hát
-    changeSong(dir);
+    // changeSong(dir);
 }
+
 nextBtn.addEventListener("click", function () {
     changeSong(1);
 });
@@ -147,11 +160,7 @@ function changeSong(dir) {
 
     playPause();
 }
-function playRandomSong() {
-    const randomIndex = Math.floor(Math.random() * musics.length);
-    const randomSong = musics[randomIndex];
-    console.log("Tiêu đề:", randomSong.title);
-}
+
 playBtn.addEventListener("click", playPause);
 function playPause() {
     if (isPlaying) {
@@ -184,10 +193,34 @@ function formatTimer(number) {
         seconds < 10 ? "0" + seconds : seconds
     }`;
 }
+function colorDuration(displayTimer, duration) {
+    var duration = audioElement.duration;
+    var currentTime = audioElement.currentTime;
+    // Tính toán tỷ lệ phần trăm của bài nhạc đã chạy
+    var percentage = (currentTime / duration) * 100;
+
+    // Đặt màu sắc dựa trên tỷ lệ phần trăm
+    // Ví dụ: từ màu pink sang màu violet
+    // var greenValue = 255 - (percentage * 2.55);
+    // var redValue = percentage * 2.55;
+    var color = "linear-gradient(90deg, #ff74a4 0%, #9f6ea3 100%)";
+
+    // Cập nhật màu sắc của phần tử
+    elementToChangeColor.style.color = color;
+}
+
+// Function để cập nhật âm lượng của phần tử media
+function setVolume() {
+    mediaElement.volume = volumeControl.value / 100; // Chia cho 100 vì giá trị âm lượng nằm trong khoảng từ 0.0 đến 1.0
+}
+
+// Thêm sự kiện 'input' cho phần tử range để cập nhật âm lượng khi người dùng di chuyển thanh trượt
+volumeControl.addEventListener("input", setVolume);
 rangeBar.addEventListener("change", handleChangeBar);
 function handleChangeBar() {
     song.currentTime = rangeBar.value;
 }
+
 function init(indexSong) {
     song.setAttribute("src", `./assets/music/${musics[indexSong].file}`);
     musicName.textContent = musics[indexSong].title;

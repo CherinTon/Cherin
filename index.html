@@ -280,7 +280,9 @@
 
         <!-- music -->
         <section class="music" id="music">
-            
+            <div class="music-img">
+                <img src="./assets/images/music-chill.jpg" alt="" />
+            </div>
             <div class="container">
                 <div class="music-title">
                     <article class="section-heading">
@@ -325,113 +327,136 @@
                 </div>
                 <!-- Tracklist -->
                 <div class="music-list" id="songList">
-                    <audio id="audio-player" controls style="display:none;"></audio>
+                    <audio
+                        id="audioPlayer"
+                        controls
+                        style="display: none"
+                    ></audio>
 
                     <ul class="tracklist">
                         <li
                             onclick="playSong('./assets/music/1.mp3')"
                             class="list-music"
                         >
-                        01. Windy Hill
+                            01. Là Kẻ Địch / 为敌
                         </li>
                         <li
                             onclick="playSong('./assets/music/2.mp3')"
                             class="list-music"
                         >
-                            02. Against the Odds
+                            02. Windy Hill
                         </li>
                         <li
                             onclick="playSong('./assets/music/3.mp3')"
                             class="list-music"
                         >
-                            03.  Mirror Mirror
+                            03. Mirror Mirror
                         </li>
                         <li
                             onclick="playSong('./assets/music/4.mp3')"
                             class="list-music"
                         >
-                            04.  Serenade
+                            04. Serenade
                         </li>
                         <li
                             onclick="playSong('./assets/music/5.mp3')"
                             class="list-music"
                         >
-                            05.  The Witch & The Girl
+                            05. The Witch & The Girl
                         </li>
                         <li
                             onclick="playSong('./assets/music/6.mp3')"
                             class="list-music"
                         >
-                            06.  Witching Hour
+                            06. Witching Hour
                         </li>
                         <li
                             onclick="playSong('./assets/music/7.mp3')"
                             class="list-music"
                         >
-                            07.  Wolf's Knight
+                            07. Wolf's Knight
                         </li>
                         <li
                             onclick="playSong('./assets/music/8.mp3')"
                             class="list-music"
                         >
-                            08.  Wolf's Song
+                            08. Wolf's Song
                         </li>
                         <li
                             onclick="playSong('./assets/music/9.mp3')"
                             class="list-music"
                         >
-                            09.  
+                            09. Vây giữ
                         </li>
                         <li
                             onclick="playSong('./assets/music/10.mp3')"
                             class="list-music"
                         >
-                            10.  
+                            10. Against the Odds
                         </li>
                     </ul>
                 </div>
                 <!--  control -->
                 <div class="music-tab">
-                      <div class="music-playing">
-                          <span class="music-now">Now playing: </span>
-                          <span class="music-name"></span>
-                      </div>
-                      <input type="range" name="range" id="range" class="range" />
-                      <audio src="./assets/music/1.mp3" id="song"></audio>
-                      <div class="timer">
-                          <div class="remaining">-3:10</div>
-                          <div class="duration">2:10</div>
-                      </div>
-                      <div class="controls">
-                        <ion-icon name="shuffle" class="play-random control-btn"></ion-icon>
-                        <ion-icon name="play-back" class="play-back control-btn"></ion-icon>
+                    <div class="music-playing">
+                        <span class="music-now">Now playing: </span>
+                        <span class="music-name"></span>
+                    </div>
+                    <input
+                        type="range"
+                        name="range"
+                        id="rangeMusic"
+                        class="range"
+                    />
+                    <audio src="./assets/music/1.mp3" id="song"></audio>
+                    <div class="timer">
+                        <div class="remaining">-3:10</div>
+                        <div class="duration">2:10</div>
+                    </div>
+                    <div class="controls">
+                        <ion-icon
+                            name="shuffle"
+                            class="play-random control-btn"
+                        ></ion-icon>
+                        <ion-icon
+                            name="play-back"
+                            class="play-back control-btn"
+                        ></ion-icon>
                         <div class="play">
-                          <div class="player-inner">
-                            <ion-icon name="play" class="play-icon control-btn"></ion-icon>
-                          </div>
+                            <div class="player-inner">
+                                <ion-icon
+                                    name="play"
+                                    class="play-icon control-btn"
+                                ></ion-icon>
+                            </div>
                         </div>
-                        <ion-icon name="play-forward" class="play-forward control-btn"></ion-icon>
-                        <ion-icon name="repeat" class="play-repeat control-btn"></ion-icon>
-                      </div>
+                        <ion-icon
+                            name="play-forward"
+                            class="play-forward control-btn"
+                        ></ion-icon>
+                        <ion-icon
+                            name="repeat"
+                            class="play-repeat control-btn"
+                        ></ion-icon>
+                        <!-- Thanh điều chỉnh âm lượng -->
+                        <div class="music-volume">
+                            <ion-icon
+                                name="volume-medium"
+                                class="vol-range"
+                            ></ion-icon>
+                            <input
+                                type="range"
+                                id="volumeSlider"
+                                class="vol-range"
+                                min="0"
+                                max="100"
+                                value="50"
+                            />
+                        </div>
+                    </div>
                 </div>
                 <script src="./musicChill.js"></script>
-
-            
-            <script>
-                function playSong(songUrl) {
-  var audioPlayer = document.getElementById('audio-player');
-  if (!audioPlayer) {
-    // Tạo thẻ audio nếu nó không tồn tại
-    audioPlayer = document.createElement('audio');
-    audioPlayer.id = 'audio-player';
-    audioPlayer.controls = true;
-    document.body.appendChild(audioPlayer);
-  }
-  audioPlayer.src = songUrl; // Cập nhật đường dẫn bài hát
-  audioPlayer.play(); // Phát bài hát
-}
-
-            </script>
+            </div>
         </section>
     </body>
 
