@@ -58,7 +58,7 @@ a:hover {
 }
 .section-heading {
     display: flex;
-    font-size: 4rem;
+    font-size: 5rem;
     font-family: "teko", sans-serif;
     line-height: 1.2;
     cursor: pointer;
@@ -279,11 +279,11 @@ a:hover {
 .music .music-title {
     display: flex;
     align-items: center;
-    top: 20px;
+    top: 30px;
 }
 .music-desc {
-    font-size: 1.4rem;
-    margin-left: 16px;
+    font-size: 1.6rem;
+    margin-left: 20px;
 }
 .section-heading:hover .icon-heading {
     color: #fff;
@@ -293,12 +293,12 @@ a:hover {
 }
 .music-img img {
     width: 100%;
-    object-fit: cover;
-    filter: brightness(40%);
+    object-fit: contain;
+    filter: brightness(25%);
 }
 /* Music search */
 .search-form {
-    margin-top: 100px;
+    margin-top: 110px;
     width: 450px;
     height: 40px;
     display: flex;
@@ -360,21 +360,21 @@ input {
     right: 0;
 }
 .list-music {
-    font-size: 2.4rem;
-    margin-top: 16px;
+    font-size: 3rem;
+    margin-top: 30px;
     cursor: pointer;
 }
 
 /* CONTROL */
 .music-tab {
-    margin-top: 180px;
+    margin-top: 50px;
     width: 400px;
     max-width: 500px;
     border-radius: 12px;
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 30px;
-    /* top: 13%; */
+    top: 20%;
     left: 45%;
     transform: translateX(-50%);
 }
